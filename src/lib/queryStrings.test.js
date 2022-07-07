@@ -6,7 +6,30 @@ describe("Object to query string", () => {
       name: "Rafael",
       lastName: "Moura",
     };
-    queryString(obj);
+
     expect(queryString(obj)).toBe("name=Rafael&lastName=Moura");
+  });
+
+  it("should throw error when invalid object", () => {
+    const obj = {
+      name: "Rafael",
+      lastName: ["Costa", "Moura"],
+    };
+
+    expect(queryString(obj)).toBe("name=Rafael&lastName=Costa,Moura");
+  });
+
+  it("should throw error when invalid object", () => {
+    const obj = {
+      name: "Rafael",
+      lastName: {
+        midlle: "Costa",
+        last: "Moura",
+      },
+    };
+
+    expect(() => {
+      queryString(obj);
+    }).toThrowError();
   });
 });
