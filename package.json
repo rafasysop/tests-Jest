@@ -1,0 +1,14 @@
+{
+  "name": "mod01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rafael Moura <rafaelcostamoura@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2"
+  }
+}
