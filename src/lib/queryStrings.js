@@ -15,7 +15,10 @@ const strintToObject = (string) =>
     return arr;
   });
 
-module.exports.queryString = (obj) =>
-  Object.entries(obj).map(keyValueToString).join("&");
+export function queryString(obj) {
+  return Object.entries(obj).map(keyValueToString).join("&");
+}
 
-module.exports.parse = (string) => Object.fromEntries(strintToObject(string));
+export function parse(string) {
+  return Object.fromEntries(strintToObject(string));
+}
