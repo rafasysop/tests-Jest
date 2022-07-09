@@ -11,11 +11,9 @@ describe("Cart", () => {
     title: "Echo Show",
     price: 41872, //418.72
   };
-
   beforeEach(() => {
     cart = new Cart();
   });
-
   it("should return 0 when getTotal() is executed in a newly created instance", () => {
     const cart = new Cart();
     expect(cart.getTotal()).toEqual(0);
@@ -53,5 +51,19 @@ describe("Cart", () => {
 
     cart.remove(product);
     expect(cart.getTotal()).toEqual(41872);
+  });
+
+  describe("Checkout Cart", () => {
+    it("should ", () => {
+      cart.add({
+        product,
+        quantity: 2, //70776
+      });
+      cart.add({
+        product: product2,
+        quantity: 1, //41872
+      });
+      expect(cart.checkout()).toMatchSnapshot();
+    });
   });
 });

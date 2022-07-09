@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Checkout Cart should  1`] = `
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 35388,
+        "title": "Echo Dot",
+      },
+      "quantity": 2,
+    },
+    Object {
+      "product": Object {
+        "price": 41872,
+        "title": "Echo Show",
+      },
+      "quantity": 1,
+    },
+  ],
+  "total": 112648,
+}
+`;
