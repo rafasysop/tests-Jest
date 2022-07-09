@@ -3,6 +3,7 @@ import find from "lodash/find";
 
 export class Cart {
   items = [];
+
   add(item) {
     const itemToFind = { product: item.product };
     const hasProduct = find(this.items, itemToFind);
@@ -13,19 +14,33 @@ export class Cart {
 
     this.items.push(item);
   }
+
   getTotal() {
     return this.items.reduce(
       (acc, item) => acc + item.product.price * item.quantity,
       0
     );
   }
+
   remove(product) {
     remove(this.items, { product });
   }
-  checkout() {
+
+  sumary() {
     return {
       total: this.getTotal(),
       items: this.items,
+    };
+  }
+
+  checkout() {
+    const { total, items } = this.sumary();
+
+    this.items = [];
+
+    return {
+      total,
+      items,
     };
   }
 }

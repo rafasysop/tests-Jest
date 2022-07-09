@@ -21,3 +21,18 @@ Object {
   "total": 112648,
 }
 `;
+
+exports[`Cart Checkout Cart should return object with the total and list items when sumary is called 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 35388,
+        "title": "Echo Dot",
+      },
+      "quantity": 2,
+    },
+  ],
+  "total": 70776,
+}
+`;
