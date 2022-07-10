@@ -21,11 +21,11 @@ export class Cart {
 
   getTotal() {
     return this.items
-      .reduce(
-        (acc, item) =>
-          acc.add(Currency({ amount: item.product.price * item.quantity })),
-        Currency({ amount: 0 })
-      )
+      .reduce((acc, { product, quantity, condition }) => {
+        const amount = Currency({ amount: product.price * quantity });
+
+        return acc.add(amount).percentage(100 - (condition?.percentage || 0));
+      }, Currency({ amount: 0 }))
       .getAmount();
   }
 
